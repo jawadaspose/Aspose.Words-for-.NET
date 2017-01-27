@@ -13,6 +13,9 @@ using NUnit.Framework;
 
 namespace ApiExamples
 {
+    using System;
+    using System.Diagnostics;
+
     [TestFixture]
     internal class ExPdfSaveOptions : ApiExampleBase
     {
@@ -171,6 +174,34 @@ namespace ApiExamples
             //Assert that color image in document was grey
             doc.Save(MyDir + @"\Artifacts\ColorMode.PdfGrayscaleMode.pdf", pdfSaveOptions);
             //ExEnd
+        }
+
+        //ToDo: Need to test dev repo
+        [Test]
+        public void MemoryOptimization()
+        {
+            Document doc = new Document(MyDir + "SaveOptions.MemoryOptimization.doc");
+
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+
+            doc.Save(MyDir + "SaveOptions.MemoryOptimization Out.pdf");
+            
+            watch.Stop();
+            Console.WriteLine("Time without optimization: " + watch.Elapsed.TotalSeconds);
+
+            // Without memory optimization
+            SaveOptions so = SaveOptions.CreateSaveOptions(SaveFormat.Pdf);
+            so.MemoryOptimization = true;
+
+            watch.Reset();
+
+            watch.Start();
+
+            doc.Save(MyDir + "SaveOptions.MemoryOptimization Out.pdf", so);
+
+            watch.Stop();
+            Console.WriteLine("Time with optimization: " + watch.Elapsed.TotalSeconds);
         }
     }
 }

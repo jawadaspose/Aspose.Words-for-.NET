@@ -43,5 +43,13 @@ namespace ApiExamples
             doc.Save(MyDir + @"\Artifacts\SaveOptions.MyraidPro Out.gif", saveOptions);
             //ExEnd
         }
+
+        [Test]
+        public void QualityOptions()
+        {
+            Document doc = new Document();
+
+            ImageSaveOptions saveoptions = new ImageSaveOptions(SaveFormat.Jpeg);
+        }
     }
 }
