@@ -186,5 +186,15 @@ namespace ApiExamples
             saveOptions = new HtmlSaveOptions(SaveFormat.Epub);
             Assert.AreEqual(false, saveOptions.ExportRoundtripInformation);
         }
+
+        [Test]
+        public void Html5Support()
+        {
+            Document doc = new Document();
+
+            HtmlSaveOptions saveOptions = new HtmlSaveOptions();
+            saveOptions.HtmlVersion = HtmlVersion.Html5;
+            doc.Save(MyDir + "HTML5Support Out.html", saveOptions);
+        }
     }
 }
