@@ -2090,7 +2090,7 @@ namespace ApiExamples
             double width = 360;
             double height = 270;
 
-            Shape shape = builder.InsertOnlineVideo(url, width, height);
+            builder.InsertOnlineVideo(url, width, height);
         }
 
         [Test]
@@ -2104,7 +2104,7 @@ namespace ApiExamples
             double height = 270;
 
             // Poster frame image.
-            // byte[] imageBytes = this._image;
+            byte[] imageBytes = File.ReadAllBytes(this._image);
 
             // Visible url
             string vimeoVideoUrl = @"https://vimeo.com/52477838";
@@ -2112,7 +2112,7 @@ namespace ApiExamples
             // Embed Html code.
             string vimeoEmbedCode = "<iframe src=\"https://player.vimeo.com/video/52477838\" width=\"640\" height=\"360\" frameborder=\"0\" title=\"Aspose\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
 
-            // builder.InsertOnlineVideo(vimeoVideoUrl, vimeoEmbedCode, imageBytes, width, height);
+            builder.InsertOnlineVideo(vimeoVideoUrl, vimeoEmbedCode, imageBytes, width, height);
         }
     }
 }

@@ -188,12 +188,15 @@ namespace ApiExamples
         }
 
         [Test]
-        public void Html5Support()
+        [TestCase(HtmlVersion.Html5)]
+        [TestCase(HtmlVersion.Xhtml)]
+        public void Html5Support(HtmlVersion htmlVersion)
         {
             Document doc = new Document();
 
             HtmlSaveOptions saveOptions = new HtmlSaveOptions();
-            saveOptions.HtmlVersion = HtmlVersion.Html5;
+            saveOptions.HtmlVersion = htmlVersion;
+
             doc.Save(MyDir + "HTML5Support Out.html", saveOptions);
         }
     }
