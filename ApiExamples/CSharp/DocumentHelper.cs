@@ -252,6 +252,20 @@ namespace ApiExamples
         /// <param name="paraIndex">
         /// Paragraph number from collection
         /// </param>
+        internal static string GetSectionText(Document doc, int secIndex)
+        {
+            return doc.Sections[secIndex].GetText();
+        }
+
+        /// <summary>
+        /// Get paragraph text of the current document
+        /// </summary>
+        /// <param name="doc">
+        /// Current document
+        /// </param>
+        /// <param name="paraIndex">
+        /// Paragraph number from collection
+        /// </param>
         /// <param name="doc">Current document</param>
         /// <param name="paraIndex">Paragraph number from collection</param>
         internal static string GetParagraphText(Document doc, int paraIndex)

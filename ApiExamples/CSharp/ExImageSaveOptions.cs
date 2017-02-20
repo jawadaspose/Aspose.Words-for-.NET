@@ -59,16 +59,12 @@ namespace ApiExamples
 
             GraphicsQualityOptions qualityOptions = new GraphicsQualityOptions();
             qualityOptions.SmoothingMode = SmoothingMode.AntiAlias;
-            qualityOptions.CompositingMode = CompositingMode.SourceCopy;
-            qualityOptions.CompositingQuality = CompositingQuality.GammaCorrected;
-            qualityOptions.InterpolationMode = InterpolationMode.Bicubic;
-            qualityOptions.StringFormat = StringFormat.GenericTypographic;
             qualityOptions.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
 
             ImageSaveOptions saveOptions = new ImageSaveOptions(SaveFormat.Jpeg);
             saveOptions.GraphicsQualityOptions = qualityOptions;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.QualityOptions Out.gif", saveOptions);
+            doc.Save(MyDir + @"\Artifacts\SaveOptions.QualityOptions Out.jpeg", saveOptions);
             //ExEnd
         }
     }
