@@ -44,9 +44,9 @@ namespace Aspose.Words.Examples.CSharp
             // Viewers-Visualizers
             // =====================================================
             // =====================================================
-            
+
             //DocumentExplorerExample.MainForm.Run();
-            
+
             // =====================================================
             // =====================================================
             // Quick Start
@@ -78,7 +78,10 @@ namespace Aspose.Words.Examples.CSharp
             // SpecifySaveOption.Run();
             // AccessAndVerifySignature.Run();
             // Doc2Pdf.Run();
+            // ExportFontsAsBase64.Run();
+            // ExportResourcesUsingHtmlSaveOptions.Run();
             // DigitallySignedPdf.Run();
+            // DigitallySignedPdfUsingCertificateHolder.Run();
             // ConvertDocumentToByte.Run();
             // ConvertDocumentToEPUB.Run();
             // ConvertDocumentToHtmlWithRoundtrip.Run();
@@ -141,6 +144,7 @@ namespace Aspose.Words.Examples.CSharp
 
             //// Document
             //// =====================================================
+
             // ExtractContentBetweenParagraphs.Run();
             // ExtractContentBetweenBlockLevelNodes.Run();
             // ExtractContentBetweenParagraphStyles.Run();
@@ -181,6 +185,7 @@ namespace Aspose.Words.Examples.CSharp
             // RichTextBoxContentControl.Run();
             // ComboBoxContentControl.Run();
             // UpdateContentControls.Run();
+            // GenerateACustomBarCodeImage.Run();
 
             //// Fields
             //// =====================================================
@@ -204,11 +209,12 @@ namespace Aspose.Words.Examples.CSharp
             // RenameMergeFields.Run();
             // ChangeFieldUpdateCultureSource.Run();
             // GetFieldNames.Run();
-            
+
             //// Images
             //// =====================================================
             // AddImageToEachPage.Run();
             // AddWatermark.Run();
+            // RemoveWatermark.Run();
             // CompressImages.Run();
             // ExtractImagesToFiles.Run();
             // InsertBarcodeImage.Run();
@@ -277,7 +283,7 @@ namespace Aspose.Words.Examples.CSharp
             // DeleteHeaderFooterContent.Run();
             // CloneSection.Run();
             // CopySection.Run();
-            
+
 
             //// =====================================================
             //// =====================================================
@@ -347,7 +353,7 @@ namespace Aspose.Words.Examples.CSharp
             // ScatterChart.Run();
             // BubbleChart.Run();
             // ChartWithFilteringGroupingOrdering.Run();
-         
+
             // Stop before exiting
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");
             Console.ReadKey();
@@ -404,6 +410,10 @@ namespace Aspose.Words.Examples.CSharp
         public static String GetDataDir_WorkingWithCharts()
         {
             return Path.GetFullPath(GetDataDir_Data() + "Programming-Documents/Charts/");
+        }
+        public static String GetDataDir_WorkingWithOnlineVideo()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "Programming-Documents/Video/");
         }
         public static String GetDataDir_WorkingWithNode()
         {
