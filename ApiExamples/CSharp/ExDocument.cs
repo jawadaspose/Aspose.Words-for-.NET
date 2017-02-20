@@ -1728,15 +1728,19 @@ namespace ApiExamples
         [Test]
         public void OoxmlComplianceVersion()
         {
+            //ExStart
+            //ExFor:Document.Compliance
+            //ExSummary:Shows how to get OOXML compliance version
             Document doc = new Document(MyDir + "Document.doc");
 
             OoxmlCompliance compliance = doc.Compliance;
             Assert.AreEqual(compliance, OoxmlCompliance.Ecma376_2006);
 
-            doc = new Document(MyDir + "BarCode.docx");
-            compliance = doc.Compliance;
+            doc = new Document(MyDir + "Field.BarCode.docx");
 
+            compliance = doc.Compliance;
             Assert.AreEqual(compliance, OoxmlCompliance.Iso29500_2008_Transitional);
+            //ExEnd
         }
     }
 }

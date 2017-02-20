@@ -176,32 +176,20 @@ namespace ApiExamples
             //ExEnd
         }
 
-        //ToDo: Need to test dev repo
         [Test]
         public void MemoryOptimization()
         {
+            //ExStart
+            //ExFor:SaveOptions.MemoryOptimization
+            //ExSummary:Shows an option to optimise memory consumption when you work  with large documents. When set to true it will improve document memory footprint but will add extra time to processing. This optimization is only applied during save operation.
             Document doc = new Document(MyDir + "SaveOptions.MemoryOptimization.doc");
 
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
+            SaveOptions saveOptions = SaveOptions.CreateSaveOptions(SaveFormat.Pdf);
+            saveOptions.MemoryOptimization = true;
 
-            doc.Save(MyDir + "SaveOptions.MemoryOptimization Out.pdf");
-            
-            watch.Stop();
-            Console.WriteLine("Time without optimization: " + watch.Elapsed.TotalSeconds);
+            doc.Save(MyDir + @"\Artifacts\SaveOptions.MemoryOptimization Out.pdf", saveOptions);
+            //ExEnd
 
-            // Without memory optimization
-            SaveOptions so = SaveOptions.CreateSaveOptions(SaveFormat.Pdf);
-            so.MemoryOptimization = true;
-
-            watch.Reset();
-
-            watch.Start();
-
-            doc.Save(MyDir + "SaveOptions.MemoryOptimization Out.pdf", so);
-
-            watch.Stop();
-            Console.WriteLine("Time with optimization: " + watch.Elapsed.TotalSeconds);
         }
     }
 }

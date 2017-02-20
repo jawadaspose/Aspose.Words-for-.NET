@@ -74,11 +74,9 @@ namespace ApiExamples
         }
 
         [Test]
-        public void revNumSupport()
+        public void CreateRevNumFieldWithFieldBuilder()
         {
-            // Create new field with field builder
             Document doc = new Document();
-
             Run run = DocumentHelper.InsertNewRun(doc, " Hello World!", 0);
 
             FieldBuilder fieldBuilder = new FieldBuilder(FieldType.FieldRevisionNum);
@@ -88,34 +86,28 @@ namespace ApiExamples
 
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
-
+            
             FieldRevNum revNum = (FieldRevNum)doc.Range.Fields[0];
-
-            Assert.NotNull(revNum);
-
-            // Create new field by document builder insertfield
-            doc = new Document();
-            DocumentBuilder b = new DocumentBuilder(doc);
-            b.InsertField("REVNUM MERGEFORMAT");
-
-            dstStream = new MemoryStream();
-            doc.Save(dstStream, SaveFormat.Docx);
-
-            revNum = (FieldRevNum)doc.Range.Fields[0];
-
-            Assert.NotNull(revNum);
-
-            // Get field from word file
-            doc = new Document(MyDir + "RevNum.docx");
-            revNum = (FieldRevNum)doc.Range.Fields[0];
-
             Assert.NotNull(revNum);
         }
 
         [Test]
-        public void infoSupport()
+        public void CreateRevNumFieldByDocumentBuilder()
         {
-            // Create new field with field builder
+            Document doc = new Document();
+            DocumentBuilder b = new DocumentBuilder(doc);
+            b.InsertField("REVNUM MERGEFORMAT");
+
+            MemoryStream dstStream = new MemoryStream();
+            doc.Save(dstStream, SaveFormat.Docx);
+
+            FieldRevNum revNum = (FieldRevNum)doc.Range.Fields[0];
+            Assert.NotNull(revNum);
+        }
+
+        [Test]
+        public void CreateInfoFieldWithFieldBuilder()
+        {
             Document doc = new Document();
 
             Run run = DocumentHelper.InsertNewRun(doc, " Hello World!", 0);
@@ -129,25 +121,20 @@ namespace ApiExamples
             doc.Save(dstStream, SaveFormat.Docx);
 
             FieldInfo info = (FieldInfo)doc.Range.Fields[0];
-
             Assert.NotNull(info);
+        }
 
-            // Create new field by document builder insertfield
-            doc = new Document();
+        [Test]
+        public void CreateInfoFieldByDocumentBuilder()
+        {
+            Document doc = new Document();
             DocumentBuilder b = new DocumentBuilder(doc);
             b.InsertField("INFO MERGEFORMAT");
 
-            dstStream = new MemoryStream();
+            MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            info = (FieldInfo)doc.Range.Fields[0];
-
-            Assert.NotNull(info);
-
-            // Get field from word file
-            doc = new Document(MyDir + "RevNum.docx");
-            info = (FieldInfo)doc.Range.Fields[1];
-
+            FieldInfo info = (FieldInfo)doc.Range.Fields[0];
             Assert.NotNull(info);
         }
 
@@ -438,8 +425,8 @@ namespace ApiExamples
 
             doc.UnlinkFields();
 
-            string paraWithFields = DocumentHelper.GetParagraphText(doc, 1);
-            Assert.AreEqual(paraWithFields, "Fields.Docx   Элементы указателя не найдены.     1.\r");
+            string paraWithFields = DocumentHelper.GetParagraphText(doc, 0);
+            Assert.AreEqual("Fields.Docx   Элементы указателя не найдены.     1.\r", paraWithFields);
         }
 
         [Test]
@@ -462,7 +449,7 @@ namespace ApiExamples
             Document doc = new Document(MyDir + "UnlinkFields.docx");
             doc.Range.Fields[1].Unlink();
 
-            string paraWithFields = DocumentHelper.GetParagraphText(doc, 1);
+            string paraWithFields = DocumentHelper.GetParagraphText(doc, 0);
             Assert.AreEqual(paraWithFields, "\u0013 FILENAME  \\* Caps  \\* MERGEFORMAT \u0014Fields.Docx\u0015   Элементы указателя не найдены.     \u0013 LISTNUM  LegalDefault \u0015\r");
         }
 
