@@ -1,12 +1,11 @@
 ﻿using System;
 using Aspose.Words;
 using Aspose.Words.Fields;
+using Aspose.Words.Drawing;
 using NUnit.Framework;
 
 namespace ApiExamples
 {
-    using Aspose.Words.Drawing;
-
     [TestFixture]
     internal class ExParagraph : ApiExampleBase
     {

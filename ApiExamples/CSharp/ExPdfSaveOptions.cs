@@ -13,9 +13,6 @@ using NUnit.Framework;
 
 namespace ApiExamples
 {
-    using System;
-    using System.Diagnostics;
-
     [TestFixture]
     internal class ExPdfSaveOptions : ApiExampleBase
     {
@@ -120,7 +117,7 @@ namespace ApiExamples
         }
 
         //ToDo: Add gold asserts
-        //For assert this test you need to open "SaveOptions.PdfImageComppression PDF_A_1_B Out.pdf" and "SaveOptions.PdfImageComppression PDF_A_1_A Out.pdf" and check that header image in this documents are equal header image in the "SaveOptions.PdfImageComppression Out.pdf" 
+        //For assert this test you need to open "SaveOptions.PdfImageCompression PDF_A_1_B Out.pdf" and "SaveOptions.PdfImageCompression PDF_A_1_A Out.pdf" and check that header image in this documents are equal header image in the "SaveOptions.PdfImageComppression Out.pdf" 
         [Test]
         public void ImageCompression()
         {
@@ -131,14 +128,14 @@ namespace ApiExamples
             //ExFor:PdfImageCompression
             //ExFor:PdfCompliance
             //ExSummary:Demonstrates how to save images to PDF using JPEG encoding to decrease file size.
-            Document doc = new Document(MyDir + "SaveOptions.PdfImageComppression.rtf");
+            Document doc = new Document(MyDir + "SaveOptions.PdfImageCompression.rtf");
 
             PdfSaveOptions options = new PdfSaveOptions();
 
             options.ImageCompression = PdfImageCompression.Jpeg;
             options.PreserveFormFields = true;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageComppression Out.pdf", options);
+            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageCompression Out.pdf", options);
 
             PdfSaveOptions optionsA1b = new PdfSaveOptions();
             optionsA1b.Compliance = PdfCompliance.PdfA1b;
