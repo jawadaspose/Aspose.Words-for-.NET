@@ -357,7 +357,11 @@ namespace Aspose.Words.Examples.CSharp
             // ScatterChart.Run();
             // BubbleChart.Run();
             // ChartWithFilteringGroupingOrdering.Run();
-            ConditionalBlocks.Run();
+            // ConditionalBlocks.Run();
+            // InsertImagesDynamically.Run();
+            // ProgressiveTotal.Run();
+            // UseVariableInTemplate.Run();
+            // SetTextBackgroundColorDynamically.Run();           
 
             // Stop before exiting
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");

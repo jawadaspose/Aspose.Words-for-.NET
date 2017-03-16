@@ -63,6 +63,11 @@
     <Compile Include="LINQ\BubbleChart.cs" />
     <Compile Include="LINQ\ChartWithFilteringGroupingOrdering.cs" />
     <Compile Include="LINQ\ConditionalBlocks.cs" />
+    <Compile Include="LINQ\DataTable.cs" />
+    <Compile Include="LINQ\SetTextBackgroundColorDynamically.cs" />
+    <Compile Include="LINQ\UseVariableInTemplate.cs" />
+    <Compile Include="LINQ\ProgressiveTotal.cs" />
+    <Compile Include="LINQ\InsertImagesDynamically.cs" />
     <Compile Include="LINQ\ScatterChart.cs" />
     <Compile Include="LINQ\PieChart.cs" />
     <Compile Include="LINQ\InTableWithFilteringGroupingSorting.cs" />
@@ -272,9 +277,7 @@
     <Compile Include="Loading-and-Saving\LoadAndSaveToStream.cs" />
     <Compile Include="Quick-Start\UpdateFields.cs" />
     <Compile Include="Quick-Start\WorkingWithNodes.cs" />
-    <Compile Include="Rendering-Printing\PrintMultiplePagesOnOneSheet.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Rendering-Printing\PrintMultiplePagesOnOneSheet.cs" />
     <Compile Include="Rendering-Printing\PrintDocViaXpsPrint.cs" />
     <Compile Include="Rendering-Printing\PrintProgressDialog.cs" />
     <Compile Include="Rendering-Printing\LoadHyphenationDictionaryForLanguage.cs" />

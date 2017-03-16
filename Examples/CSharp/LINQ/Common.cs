@@ -41,19 +41,19 @@ namespace Aspose.Words.Examples.CSharp.LINQ
         public static IEnumerable<Manager> GetManagers()
         {
             // ExStart:GetManagers
-            Manager manager = new Manager { Name = "John Smith", Age = 36, Photo = Photo() };
+            Manager manager = new Manager { Name = "John Smith", Age = 36, Photo = Photo() };          
             manager.Contracts = new Contract[]
             {
-                new Contract { Client = new Client { Name = "A Company", Country= "Australia", LocalAddress = "219-241 Cleveland St STRAWBERRY HILLS  NSW  1427" }, Manager = manager, Price = 1200000, Date = new DateTime(2015, 1, 1) }, 
-                new Contract { Client = new Client { Name = "B Ltd.",  Country= "Brazil", LocalAddress = "Avenida João Jorge, 112, ap. 31 Vila Industrial Campinas - SP 13035-680"}, Manager = manager, Price = 750000, Date = new DateTime(2015, 4, 1) }, 
-                new Contract { Client = new Client { Name = "C & D", Country= "Canada", LocalAddress = "101-3485 RUE DE LA MONTAGNE MONTRÉAL (QUÉBEC) H3G 2A6" }, Manager = manager, Price = 350000, Date = new DateTime(2015, 7, 1) } 
+                new Contract { Client = new Client { Name = "A Company", Country= "Australia", LocalAddress = "219-241 Cleveland St STRAWBERRY HILLS  NSW  1427" , Description="Actor", Color=System.Drawing.Color.Red }, Manager = manager, Price = 1200000, Date = new DateTime(2015, 1, 1) }, 
+                new Contract { Client = new Client { Name = "B Ltd.",  Country= "Brazil", LocalAddress = "Avenida João Jorge, 112, ap. 31 Vila Industrial Campinas - SP 13035-680", Description="Developer", Color=System.Drawing.Color.Yellow}, Manager = manager, Price = 750000, Date = new DateTime(2015, 4, 1) }, 
+                new Contract { Client = new Client { Name = "C & D", Country= "Canada", LocalAddress = "101-3485 RUE DE LA MONTAGNE MONTRÉAL (QUÉBEC) H3G 2A6" , Description="Teacher", Color=System.Drawing.Color.SkyBlue}, Manager = manager, Price = 350000, Date = new DateTime(2015, 7, 1) } 
             };
             yield return manager;
 
             manager = new Manager { Name = "Tony Anderson", Age = 37, Photo = Photo() };
             manager.Contracts = new Contract[]
             {
-                new Contract { Client = new Client { Name = "E Corp.", LocalAddress = "445 Mount Eden Road Mount Eden Auckland 1024" }, Manager = manager, Price = 650000, Date = new DateTime(2015, 2, 1) }, 
+                new Contract { Client = new Client { Name = "E Corp.", LocalAddress = "445 Mount Eden Road Mount Eden Auckland 1024"}, Manager = manager, Price = 650000, Date = new DateTime(2015, 2, 1) }, 
                 new Contract { Client = new Client { Name = "F & Partners", LocalAddress = "20 Greens Road Tuahiwi Kaiapoi 7691 " }, Manager = manager, Price = 550000, Date = new DateTime(2015, 8, 1) }, 
             };
             yield return manager;
@@ -69,6 +69,7 @@ namespace Aspose.Words.Examples.CSharp.LINQ
             yield return manager;
             // ExEnd:GetManagers
         }
+
         
         /// <summary>
         /// Return an array of photo bytes. 
